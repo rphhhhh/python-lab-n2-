@@ -1,0 +1,19 @@
+K = int(input("Введите число K: "))
+count = 0
+element_idx = 0
+prev_num = None
+print("Введите последовательность чисел (0 для завершения): ")
+while True:
+    current_num = int(input())
+    if current_num == 0:
+        break
+    element_idx += 1
+    if element_idx == 1: #проверка одного усл > К
+        if current_num > K:
+            count += 1
+    else:
+        if current_num > K and current_num > prev_num: #провер оба усл
+            count += 1
+    prev_num = current_num
+print(f"Количество локальных ростов: {count}")
+print(f"Всего элементов обработано: {element_idx}")
